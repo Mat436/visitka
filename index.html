@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Резюме — Демичев Матвей Романович</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+  <header class="header">
+    <div class="header-info">
+      <h1 class="header-info__name">Демичев Матвей Романович</h1>
+      <p class="header-info__position">Frontend-разработчик / UI/UX дизайнер</p>
+    </div>
+  </header>
+
+  <main class="main">
+    <section class="section reveal">
+      <h2 class="section__title">
+        <img class="section__icon" src="./img/icon2.svg" alt="">
+        Личные данные
+      </h2>
+      <div class="personal">
+        <p class="personal__item"><strong>ФИО:</strong> Демичев Матвей Романович</p>
+        <p class="personal__item"><strong>Дата рождения:</strong> 15.11.2006 г.</p>
+        <p class="personal__item"><strong>Телефон:</strong> <a href="tel:+79211207000">+7 (921) 120-70-00</a></p>
+        <p class="personal__item"><strong>Email:</strong> <a href="mailto:zhiga_zhiga010@mail.ru">zhiga_zhiga010@mail.ru</a></p>
+      </div>
+    </section>
+
+    <section class="section reveal">
+      <h2 class="section__title">
+        <img class="section__icon" src="./img/icon1.svg" alt="">
+        Опыт работы
+      </h2>
+
+      <article class="job">
+        <h3 class="job__title">Практикант</h3>
+        <p class="job__company">ООО «Плейс-Старт», г. Вологда</p>
+        <span class="job__period">2026 г.</span>
+        <ul class="job__list">
+          <li>Прохождение производственной практики в организации «Плейс-Старт»</li>
+          <li>Разработка дизайн-макетов сайтов и интерфейсов в Figma</li>
+          <li>Вёрстка адаптивных страниц на HTML5 и CSS3</li>
+          <li>Работа с командой над учебными и рабочими проектами</li>
+          <li>Изучение внутренних процессов разработки компании</li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="section reveal">
+      <h2 class="section__title">
+        <img class="section__icon" src="./img/icon3.svg" alt="">
+        Профессиональные навыки
+      </h2>
+      <div class="skills">
+        <span class="skills__item">HTML5</span>
+        <span class="skills__item">CSS3</span>
+        <span class="skills__item">JavaScript</span>
+        <span class="skills__item">Создание дизайн-макетов в Figma</span>
+        <span class="skills__item">Адаптивная вёрстка</span>
+        <span class="skills__item">Git / GitHub</span>
+      </div>
+    </section>
+
+    <section class="section reveal">
+      <h2 class="section__title">
+        <img class="section__icon" src="./img/icon4.svg" alt="">
+        Личные качества
+      </h2>
+      <ul class="qualities">
+        <li class="qualities__item">Ответственность и пунктуальность</li>
+        <li class="qualities__item">Умение работать в команде</li>
+        <li class="qualities__item">Быстрая обучаемость</li>
+        <li class="qualities__item">Аналитическое мышление</li>
+        <li class="qualities__item">Внимание к деталям</li>
+        <li class="qualities__item">Стрессоустойчивость</li>
+        <li class="qualities__item">Инициативность</li>
+        <li class="qualities__item">Креативный подход</li>
+      </ul>
+    </section>
+
+  </main>
+</div>
+
+<script>
+  const revealElements = document.querySelectorAll('.reveal');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('reveal_visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+
+  revealElements.forEach((el) => observer.observe(el));
+</script>
+
+</body>
+</html>
